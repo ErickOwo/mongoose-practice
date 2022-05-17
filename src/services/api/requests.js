@@ -14,6 +14,24 @@ const addObject = async body =>{
   return response.data;
 }
 
+const getObject = async url =>{
+  const response = await axios(url);
+  return response.data;
+}
+
+const deleteObject = async id =>{
+  const response = await axios.delete(`${API}/${id}`);
+  return response.data;
+}
+
+const putObject = async (id , body) =>{
+  const response = await axios.put(`${API}/${id}`, body, config);
+  return response.data;
+}
+
 export {
   addObject,
+  getObject,
+  deleteObject,
+  putObject,
 }
